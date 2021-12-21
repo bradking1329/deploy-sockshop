@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: carts
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -22,7 +22,7 @@ spec:
           image: dynatracesockshop/carts:0.6.0
           env:
             - name: JAVA_OPTS
-              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/sockshop/urandom
             - name: DT_TAGS
               value: 'product=sockshop'
             - name: DT_CUSTOM_PROP
@@ -66,7 +66,7 @@ metadata:
   name: carts
   labels:
     app: carts
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -80,7 +80,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catalogue
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -140,7 +140,7 @@ metadata:
   name: catalogue
   labels:
     app: catalogue
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -153,7 +153,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: front-end
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -207,7 +207,7 @@ metadata:
   name: front-end
   labels:
     app: front-end
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -221,7 +221,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: orders
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -238,7 +238,7 @@ spec:
           image: dynatracesockshop/orders:0.6.0
           env:
             - name: JAVA_OPTS
-              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/sockshop/urandom
             - name: DT_TAGS
               value: 'product=sockshop'
             - name: DT_CUSTOM_PROP
@@ -283,7 +283,7 @@ metadata:
   name: orders
   labels:
     app: orders
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -296,7 +296,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -356,7 +356,7 @@ metadata:
   name: payment
   labels:
     app: payment
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -369,7 +369,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: queue-master
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -386,7 +386,7 @@ spec:
           image: dynatracesockshop/queue-master:0.5.0
           env:
             - name: JAVA_OPTS
-              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/sockshop/urandom
             - name: DT_TAGS
               value: 'product=sockshop'
             - name: DT_CUSTOM_PROP
@@ -430,7 +430,7 @@ metadata:
   name: queue-master
   labels:
     app: queue-master
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -443,7 +443,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shipping
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -460,7 +460,7 @@ spec:
           image: dynatracesockshop/shipping:0.6.0
           env:
             - name: JAVA_OPTS
-              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/dev/urandom
+              value: -Xms128m -Xmx512m -XX:PermSize=128m -XX:MaxPermSize=128m -XX:+UseG1GC -Djava.security.egd=file:/sockshop/urandom
             - name: DT_TAGS
               value: 'product=sockshop'
             - name: DT_CUSTOM_PROP
@@ -504,7 +504,7 @@ metadata:
   name: shipping
   labels:
     app: shipping
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
@@ -517,7 +517,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: user
-  namespace: dev
+  namespace: sockshop
 spec:
   replicas: 1
   selector:
@@ -577,7 +577,7 @@ metadata:
   name: user
   labels:
     app: user
-  namespace: dev
+  namespace: sockshop
 spec:
   ports:
     - name: http
